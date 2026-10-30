@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a0a0a">
+<title>Mofiebet — Private Ticket Booking</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="styles.css">
+
+<!-- Firebase Compat SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<header class="topbar">
+  <div class="topbar-top">
+    <div class="brand" onclick="selectSite('Betpawa')">
+      <div class="logo">M</div>
+      <div class="brand-text">
+        <strong class="logo-text">Mofiebet</strong>
+        <span>Private Booking</span>
+      </div>
+    </div>
+    <div class="head-right" id="head-right"></div>
+  </div>
+  
+  <!-- Betting Site Tabs -->
+  <nav class="nav-sites" id="nav-sites"></nav>
+</header>
+
+<!-- Slide-out Profile Menu -->
+<div id="side-menu" class="side-menu">
+  <div class="side-menu-header">
+    <div id="sm-avatar" class="avatar">H</div>
+    <h3 id="sm-name">User Name</h3>
+    <p id="sm-email" class="muted">email@example.com</p>
+    <p id="sm-tier" class="sm-tier">Free Account</p>
+  </div>
+  <div class="side-menu-links">
+    <button onclick="go('profile')">
+      <span class="menu-icon"></span> Profile & Bookings
+    </button>
+    <button id="sm-admin-link" style="display:none" onclick="go('admin')">
+      <span class="menu-icon"></span> Admin Dashboard
+    </button>
+    <button class="danger" onclick="logout()">
+      <span class="menu-icon"></span> Log out
+    </button>
+  </div>
+</div>
+
+<!-- Backdrop for Side Menu -->
+<div id="menu-backdrop" class="menu-backdrop" onclick="toggleMenu()"></div>
+
+<!-- Main App Container -->
+<main id="app">
+  <div style="text-align:center; padding: 80px 20px; color: var(--muted);">
+    <div class="logo lg" style="margin: 0 auto 20px;">M</div>
+    <h2 style="font-size:18px;">Connecting to Mofiebet...</h2>
+  </div>
+</main>
+
+<!-- Clean Compact Text Footer -->
+<footer>
+  <div class="footer-clean">
+    
+    <div class="footer-brand">
+      <strong class="logo-text">Mofiebet</strong>
+      <span class="footer-dot">•</span>
+      <span class="footer-copyright">© 2026 All rights reserved.</span>
+    </div>
+    
+    <div class="footer-contact">
+      <span class="contact-label">Contact us on WhatsApp</span>
+      <div class="contact-numbers">
+        <a href="https://wa.me/256790311166" target="_blank" class="whatsapp-link">
+           +256 790 311 166
+        </a>
+        <a href="https://wa.me/256748368400" target="_blank" class="whatsapp-link">
+           +256 748 368 400
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="age-text">18+</span>
+      <span class="responsible-msg">Bet responsibly</span>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Modals & Toasts -->
+<div id="modal-root"></div>
+<div id="toasts"></div>
+
+<!-- App Logic -->
+<script src="app.js"></script>
+</body>
+</html>
